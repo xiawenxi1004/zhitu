@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.TeacherListMapper">
+	<select id="getTeacherList" resultType="com.example.demo.model.AllTeacher">
+			select
+		t.id,t.realname,t.`name`,t.image,
+		s.id sid,s.label slabel,
+		g.id
+		gid,g.label glabel,
+		tt.ttid ttid,tt.type,
+		t.techtime ,t.techyear
+		from teacher t
+		LEFT JOIN `subject` s
+		ON s.id=t.subjectId
+		LEFT JOIN grade g
+		ON g.id=t.gradeId
+		LEFT JOIN teacher_type tt
+		ON t.tech_type=tt.ttid
+<!-- where g.id=#{gid} and tt.ttid=#{type} and s.id=#{sid}  -->
+<where>
+	<if test="gid != null and   gid !=''     ">
+	 g.id=#{gid} 
+	 </if>
+	<if test="type != null  and   type !='' ">
+    and tt.ttid=#{type} 
+  </if>
+	<if test="sid != null and   sid !=''  ">
+	and s.id=#{sid} 
+	</if>
+	</where>
+	</select>
+	
+	
+	
+		<select id="getTeacherList2" resultType="com.example.demo.model.AllTeacher3">
+			select
+		t.id,t.realname,t.`name`,t.image,
+		s.id sid,s.label slabel,
+		g.id
+		gid,g.label glabel,
+		tt.ttid ttid,tt.type,
+		t.techtime ,t.techyear
+		from teacher t
+		LEFT JOIN `subject` s
+		ON s.id=t.subjectId
+		LEFT JOIN grade g
+		ON g.id=t.gradeId
+		LEFT JOIN teacher_type tt
+		ON t.tech_type=tt.ttid
+<!-- where g.id=#{gid} and tt.ttid=#{type} and s.id=#{sid}  -->
+<where>
+	<if test="gid != null and   gid !=''     ">
+	 g.id=#{gid} 
+	 </if>
+	<if test="type != null  and   type !='' ">
+    and tt.ttid=#{type} 
+  </if>
+	<if test="sid != null and   sid !=''  ">
+	and s.id=#{sid} 
+	</if>
+	</where>
+	</select>
+</mapper>

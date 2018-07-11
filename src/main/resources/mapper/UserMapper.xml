@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserMapper">
+	<insert id="insertUser" parameterType="com.example.demo.model.User">
+		insert into `user` (phone,password)
+		VALUES(#{phone},
+		#{password}
+		);
+	</insert>
+	<!-- 检查手机号是否已注册 -->
+	<select id="selectByPhone" resultType="com.example.demo.model.User"
+		parameterType="com.example.demo.model.User">
+		select * from user
+		where phone=#{phone}
+	</select>
+	<!-- -->
+	<select id="selectUser" resultType="com.example.demo.model.User"
+		parameterType="com.example.demo.model.User">
+		select * from user
+		<where>
+			phone=#{phone} and
+			password=#{password}
+		</where>
+	</select>
+
+	<select id="selectColl" resultType="com.example.demo.model.AllTeacher3"
+		parameterType="com.example.demo.model.AllTeacher3">
+
+		select
+		t.id,t.realname,t.`name`,t.image,t.isCollect,
+		s.id sid,s.label slabel,
+		g.id
+		gid,g.label glabel,
+		tt.ttid ttid,tt.type,
+		t.techtime ,t.techyear
+		from
+		teacher t
+		LEFT JOIN `subject` s
+		ON s.id=t.subjectId
+		LEFT JOIN grade g
+		ON
+		g.id=t.gradeId
+		LEFT JOIN teacher_type tt
+		ON t.tech_type=tt.ttid
+		where t.id IN
+		(SELECT tid from ut
+		where uid=#{uid}
+		);
+
+
+	</select>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.AllTeacherMapper">
+	<select id="getAllInfo" resultType="com.example.demo.model.AllTeacher">
+		select t.id,t.realname,t.`name`,t.image,
+		s.id sid,s.label slabel,
+		g.id gid,g.label glabel,
+		tt.ttid ttid,tt.type,
+		t.techtime ,t.techyear   from teacher t
+		LEFT JOIN `subject` s
+		ON t.subjectId=s.id
+		LEFT JOIN teacher_type tt
+		ON t.tech_type=tt.ttid
+		LEFT JOIN grade g
+		ON t.gradeId=g.id
+	</select>
+	
+	<select id="getByGrade" resultType="com.example.demo.model.AllTeacher">
+		select t.id,t.realname,t.`name`,t.image,
+		s.id sid,s.label slabel,
+		g.id gid,g.label glabel,
+		tt.ttid ttid,tt.type,
+		t.techtime ,t.techyear   from teacher t
+		LEFT JOIN `subject` s
+		ON t.subjectId=s.id
+		LEFT JOIN teacher_type tt
+		ON t.tech_type=tt.ttid
+		LEFT JOIN grade g
+		ON t.gradeId=g.id
+
+	</select>
+</mapper>
