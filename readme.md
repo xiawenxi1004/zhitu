@@ -1,4 +1,4 @@
-<h1>知途家教 http://www.zhitutest.com</h1>
+<h1>知途家教 http://www.zhituteam.com</h1>
 
 原版的链接
 
