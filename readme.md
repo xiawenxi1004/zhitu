@@ -1,15 +1,51 @@
-<h1>知途家教 http://www.zhituteam.com</h1>
+# 知途家教移动版
 
-原版的链接
+**与他人合作，本人负责后端开发**
 
-**这个是学长写得一个项目，本人又和室友合作改的，原版是后台是用php写得，我这个版本是java写得后台，springboot搭建的环境，前端是vue写的，恩，应该是吧，不是很清楚（啊哈哈）。**
+## 预览截图
 
-主要说后端 
+**首页**
 
-技术： springboot mybatis jdk1.8 mysql  （好像并没有上传sql语句，哇咔咔）。springboot挺好使的啊，少了许多配置文件。
+![首页截图](https://github.com/xiawenxi1004/zhitu/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/0.png)
 
-功能 此版并功能未完全复刻（等待大佬完善） **已写内容**：首页教师列表展示，条件查询教师 教师详情页面  登录注册 收藏及取消收藏教师  
+**教师分类、教师详情页**
 
-后台管理系统 正在编写中，暂不上传。
+![教师分类、教师详情页](https://github.com/xiawenxi1004/zhitu/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/1.png)
 
-完善后应该可以成为一个真正的家教app。
+**登录、注册页**
+
+![教师分类、教师详情页](https://github.com/xiawenxi1004/zhitu/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/2.png)
+
+**家长、教师个人信息页**
+
+![教师分类、教师详情页](https://github.com/xiawenxi1004/zhitu/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/3.png)
+
+**家长、教师个人编辑页**
+
+![教师分类、教师详情页](https://github.com/xiawenxi1004/zhitu/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/5.png)
+
+## 技术选型
+
+- 移动端
+
+- **前端：** vue-cli，vue-router，mint.ui，axios，es6，
+
+- **后端：** Jdk1.8 ， eclipse oxygen  ，springboot，mybatis，mybatis
+
+## 功能实现
+
+1. **首页：** 轮播，分类，个人信息，教师列表
+2. **详情页：** 教师简介，预约，收藏
+3. **分类页：** 年级，学科，教师类型分类
+4. **登录注册页：** 个人登录，快捷登录
+5. **个人信息页：** 教师，家长两种
+6. **个人信息编辑页：** 教师，家长两种（待续）
+7. **收藏页：** 查看家长收藏教师列表
+8. **其他页面：** 我的课程（教师），我的试讲（教师），我的预约（家长），网站介绍，客服电话
+
+
+
+
+
+作者 夏文希 <br>
+2018 年 4月 19日
